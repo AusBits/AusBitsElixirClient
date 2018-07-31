@@ -1,6 +1,6 @@
 require Logger 
 
-defmodule PeatioClient.Server do
+defmodule AusbitsClient.Server do
   use HTTPoison.Base
   use GenServer
   #############################################################################
@@ -92,7 +92,7 @@ defmodule PeatioClient.Server do
   #############################################################################
 
   defp process_url(url) do
-    host = Application.get_env(:peatio_client, :host) || System.get_env("HOST") || "https://app.peatio.com"
+    host = Application.get_env(:ausbits_client, :host) || System.get_env("HOST") || "https://app.ausbits.com.au"
     host <> url
   end
 
@@ -109,7 +109,7 @@ defmodule PeatioClient.Server do
   end
 
   def account_name(account) do
-    String.to_atom "#{account}.api.peatio.com"
+    String.to_atom "#{account}.api.ausbits.com.au"
   end
 
   def build_api_request(path, verb \\ :get, tonce \\ nil) when verb == :get or verb == :post do
@@ -126,7 +126,7 @@ defmodule PeatioClient.Server do
     %{req | payload: payload ++ new_payload}
   end
 
-  # REF: https://app.peatio.com/documents/api_v2#!/members/GET_version_members_me_format
+  # REF: https://app.ausbits.com.au/documents/api_v2#!/members/GET_version_members_me_format
   def sign_request(req, %{key: key, secret: secret}) do
     verb = req.verb |> Atom.to_string |> String.upcase
 

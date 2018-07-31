@@ -1,8 +1,8 @@
-defmodule PeatioClient do
-  import PeatioClient.Server
+defmodule AusbitsClient do
+  import AusbitsClient.Server
 
   #############################################################################
-  ### PEATIO Public API
+  ### AusBits Public API
   #############################################################################
 
   def ticker(market) do
@@ -22,9 +22,9 @@ defmodule PeatioClient do
     body |> Enum.map fn
       (trade) ->
         %{
-          id: trade["id"], 
-          at: trade["at"], 
-          price: Decimal.new(trade["price"]), 
+          id: trade["id"],
+          at: trade["at"],
+          price: Decimal.new(trade["price"]),
           volume: Decimal.new(trade["volume"]),
           side: String.to_atom(trade["side"]),
           funds: Decimal.new(trade["funds"])
@@ -33,7 +33,7 @@ defmodule PeatioClient do
   end
 
   #############################################################################
-  ### PEATIO Private API
+  ### AusBits Private API
   #############################################################################
 
   def me(account) do

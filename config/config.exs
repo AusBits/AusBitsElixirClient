@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :peatio_client, key: :value
+#     config :ausbits_client, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:peatio_client, :key)
+#     Application.get_env(:ausbits_client, :key)
 #
 # Or configure a 3rd-party app:
 #

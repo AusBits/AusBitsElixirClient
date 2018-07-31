@@ -1,9 +1,9 @@
-defmodule PeatioClient.Mixfile do
+defmodule AusbitsClient.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :peatio_client,
+      app: :ausbits_client,
       version: "0.1.2",
       elixir: "~> 1.1",
       build_embedded: Mix.env == :prod,
@@ -41,7 +41,7 @@ defmodule PeatioClient.Mixfile do
 
   defp description do
     """
-    Peatio Exchange compatibility API for Elixir.
+    Ausbits Exchange compatibility API for Elixir.
     """
   end
 
@@ -49,7 +49,7 @@ defmodule PeatioClient.Mixfile do
     [
       maintainers: ["hpyhacking"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/peatio/peatio-client-elixir"}
+      links: %{"GitHub" => "https://github.com/ausbits/ausbits-client-elixir"}
     ]
   end
 end
